@@ -1,0 +1,74 @@
+<!--
+ * @Author: liming
+ * @Date: 2021-05-24 15:19:29
+ * @LastEditTime: 2021-05-24 15:57:33
+ * @FilePath: \LearnNode.js\03-黑马李鹏周代码\02-Node代码学习-手敲\05\01-封装ajax方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // setTimeout
+        // readFile
+        // wirteFile
+        // readdir
+        // ajax
+        // 往往异步 API 都伴随有一个回调函数
+        // var ret = fn() ——一般方法这么写的
+        // $.get('dsadas', fucntion () {})——回调函数这么写的
+        // var ret = $.get()
+
+        // 一：未封装写法
+        // var xhr = new XMLHttpRequest()
+        // xhr.open('GET', 'data.json')
+        // xhr.send()
+
+        // // 和onreadystatechange功能相同的方式：
+        // // 写法1：
+        // xhr.onload = function () {
+        //     console.log(xhr);
+        //     console.log(xhr.responseText);
+        // }
+
+        // 写法2：
+        //   xhr.onreadystatechange = function(){
+        //       if(xhr.readyState === 4){
+        //           if(xhr.status >= 200 && xhr.status < 300){
+        //               console.log(xhr.responseText);
+        //           }
+        //       }
+        //   }
+
+
+        // 二：现在开始来封装代码了
+        function get(url,callback) {
+            var xhr = new XMLHttpRequest()
+
+            xhr.open('GET', url)
+
+            xhr.send()
+
+            // 和onreadystatechange功能相同的方式：
+            // 写法1：
+            // 当请求加载成功之后要调用指定的函数
+            xhr.onload = function () {
+                //注意：我现在需要得到这里的xhr.responseText
+                // console.log(xhr.responseText);
+                callback(xhr.responseText)
+            }
+        }
+        get('data.json',function(data){
+            console.log(data);
+        })
+    </script>
+</body>
+
+</html>
