@@ -1,0 +1,2 @@
+1-npm init -y生成package.json
+2-装包 npm i express mongoose
