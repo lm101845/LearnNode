@@ -1,0 +1,31 @@
+<!--
+ * @Author: liming
+ * @Date: 2021-07-19 22:08:41
+ * @LastEditTime: 2021-07-19 22:16:43
+ * @FilePath: \02-黑马李鹏周\02-Node代码学习-手敲\day06\blog\views\list.html
+-->
+
+<!-- 写法1：自己写 -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {{include './header.html'}}
+    <h1>hello,{{name}}</h1>
+    <!-- 只有这里不一样，头部和尾部都一样的，这样就产生了重复代码了 -->
+    <!-- 我们可以使用模版继承来解决 -->
+    {{include './footer.html'}}
+</body>
+</html> -->
+
+<!-- 方法2：模版继承 -->
+<!--去继承layout.html，就可以不用像上面这样写了  -->
+{{extend './layout.html'}}
+{{block 'content'}}
+    <h1>list页面填坑内容</h1>
+{{/block}}

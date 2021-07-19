@@ -1,0 +1,33 @@
+<!--
+ * @Author: liming
+ * @Date: 2021-07-19 22:10:21
+ * @LastEditTime: 2021-07-19 22:23:33
+ * @FilePath: \02-黑马李鹏周\02-Node代码学习-手敲\day06\blog\views\layout.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules//bootstrap/dist/css/bootstrap.min.css">
+    {{block 'head'}}{{/block}}
+    <!-- 样式留坑 -->
+</head>
+<body>
+    {{include './header.html'}}
+    <!-- 中间不写死，留一个坑，将来留给孩子去填坑 -->
+    <!-- layout.html就是模版页 -->
+    {{block 'content'}}
+        <h1>默认内容</h1>
+    {{/block}}
+    {{include './footer.html'}}
+
+    <!-- 引入jquery -->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    {{block 'script'}}{{/block}}
+    <!-- 脚本留坑 -->
+</body>
+</html>

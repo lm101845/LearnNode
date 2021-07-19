@@ -10,7 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "art-template": "^4.13.2",
+    "bootstrap": "^5.0.2",
     "express": "^4.17.1",
+    "express-art-template": "^1.0.1",
+    "jquery": "^3.6.0",
     "mongoose": "^5.13.2"
   }
 }
