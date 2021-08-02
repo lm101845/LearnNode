@@ -1,3 +1,9 @@
+/*
+ * @Author: liming
+ * @Date: 2021-07-12 21:52:35
+ * @LastEditTime: 2021-08-02 14:57:18
+ * @FilePath: \02-代码手敲\router\user\login.js
+ */
 const { User} = require('../../database/model/User')
 const jwt = require('jsonwebtoken')
 module.exports = async (req, res) => {
@@ -10,6 +16,7 @@ module.exports = async (req, res) => {
             username
         }
     })
+    
     
     // 判断
     if (!findUser) {

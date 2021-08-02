@@ -1,7 +1,14 @@
+/*
+ * @Author: liming
+ * @Date: 2021-07-12 21:51:26
+ * @LastEditTime: 2021-08-02 14:46:01
+ * @FilePath: \02-代码手敲\database\model\User.js
+ */
 const {
     Sequelize,
     sequelize
 } = require('../init')
+
 
 // 创建模型，第一个参数是表名
 const User = sequelize.define('users', {

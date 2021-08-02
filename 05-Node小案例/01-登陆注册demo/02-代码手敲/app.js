@@ -1,3 +1,9 @@
+/*
+ * @Author: liming
+ * @Date: 2021-07-12 21:51:26
+ * @LastEditTime: 2021-08-02 14:46:11
+ * @FilePath: \02-代码手敲\app.js
+ */
 // 导入jwt
 const jwt = require('jsonwebtoken')
 
