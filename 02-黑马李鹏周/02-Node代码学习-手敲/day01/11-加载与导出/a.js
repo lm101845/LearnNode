@@ -1,3 +1,9 @@
+/*
+ * @Author: liming
+ * @Date: 2021-07-12 21:49:04
+ * @LastEditTime: 2021-08-02 17:45:50
+ * @FilePath: \02-Node代码学习-手敲\day01\11-加载与导出\a.js
+ */
 // require方法有2个作用：
 //    1.加载文件模块并执行里面的代码(但因为是模块作用域，虽然执行了，b依然也拿不到a里面的变量成员)
 //所以这时候可以体现出它的第二个作用了
@@ -11,20 +17,24 @@ var bExports = require('./b.js')
 // bExports变量 === exports对象
 
 console.log(bExports);
+console.log('===================');
 // 显示{}!!! 空对象！！！
 
 console.log(bExports.foo);
+console.log('===================');
 // hello
 // a.js里面的bExports变量就是b.js里面的exports对象
 
 // 想使用b.js里面的add方法
 console.log(bExports.add(10, 30));
+console.log('===================');
 // 40
 
 // console.log(age)
 // 这里是访问不到age的
 
 console.log(bExports.age)
+console.log('===================');
 // Undefined
 // 18
 // 这个也不能，因为没有挂载
