@@ -36,6 +36,7 @@
         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
       </div>
       <button type="submit" class="btn btn-success btn-block">注册</button>
+      <!-- button的type改成submit才行 -->
     </form>
     <div class="message">
       <p>已有账号? <a href="/login">点击登录</a>.</p>
@@ -44,8 +45,13 @@
   <script src="/node_modules/jquery/dist/jquery.js"></script>
   <script>
     $('#register_form').on('submit', function (e) {
+        // 这里要做一个异步提交——交互方式更加丰富
       e.preventDefault()
+    //   先阻止表单提交默认事件(默认同步提交)
       var formData = $(this).serialize()
+      console.log(formData);
+    //   表单序列化
+    // 有关解释：https://www.cnblogs.com/agansj/p/10783764.html
       $.ajax({
         url: '/register',
         type: 'post',
