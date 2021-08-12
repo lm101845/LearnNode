@@ -1,3 +1,9 @@
+<!--
+ * @Author: liming
+ * @Date: 2021-07-15 00:27:38
+ * @LastEditTime: 2021-08-12 16:37:18
+ * @FilePath: \02-黑马李鹏周\01-Node源码及资料\06\code\blog\views\register.html
+-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,9 +60,9 @@
         success: function (data) {
           var err_code = data.err_code
           if (err_code === 0) {
-            // window.alert('注册成功！')
+            window.alert('注册成功！')
             // 服务端重定向针对异步请求无效
-            window.location.href = '/'
+            // window.location.href = '/'
           } else if (err_code === 1) {
             window.alert('邮箱已存在！')
           } else if (err_code === 2) {

@@ -1,3 +1,9 @@
+/*
+ * @Author: liming
+ * @Date: 2021-07-15 00:27:34
+ * @LastEditTime: 2021-08-12 04:48:44
+ * @FilePath: \02-黑马李鹏周\01-Node源码及资料\06\code\blog\models\user.js
+ */
 var mongoose = require('mongoose')
 
 // 连接数据库
@@ -14,7 +20,7 @@ var userSchema = new Schema({
     type: String,
     required: true
   },
-  password: {
+  password: { 
     type: String,
     required: true
   },

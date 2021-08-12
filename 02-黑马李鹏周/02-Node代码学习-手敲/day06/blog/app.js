@@ -1,8 +1,8 @@
 /*
  * @Author: liming
  * @Date: 2021-07-15 00:32:55
- * @LastEditTime: 2021-08-04 15:35:11
- * @FilePath: \02-黑马李鹏周(好)\02-Node代码学习-手敲\day06\blog\app.js
+ * @LastEditTime: 2021-08-12 16:14:39
+ * @FilePath: \02-黑马李鹏周\02-Node代码学习-手敲\day06\blog\app.js
  */
 const express = require("express");
 const path = require('path');
