@@ -2,13 +2,14 @@
 
 * 网上查的数据库库相关资料：
   * [这3个md5库，哪个好？如何进行比较？性能吧。](https://segmentfault.com/q/1010000022491854)
-
 * [mongoose](https://www.npmjs.com/package/mongoose)
   * 将原生Mongo数据库进行封装，更加方便使用。
 * [blueimp-md5](https://www.npmjs.com/package/blueimp-md5)
   * 用于将密码进行MD5加密。
 * [bcrypt.js](https://www.npmjs.com/package/bcryptjs)
   * 用于将密码进行加密。
+* [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
+  * 用于生成浏览器的Token值。
 
 # Web服务器相关
 
@@ -34,9 +35,11 @@
   * 定义数据验证规则。
 
 * [@escook/express-joi](https://www.npmjs.com/package/@escook/express-joi)
-
   * 国人(我看的这个视频的作者**刘龙彬老师**)根据`joi`写的中间件。
 
   * 注意：`@hapi/joi`已被弃用，现在改用`joi`了。
 
+## 解析Token相关
 
+* [express-jwt](https://www.npmjs.com/package/express-jwt)
+* 

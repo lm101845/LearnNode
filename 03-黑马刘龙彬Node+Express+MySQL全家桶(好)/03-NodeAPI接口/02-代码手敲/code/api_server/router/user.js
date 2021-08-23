@@ -1,7 +1,7 @@
 /*
  * @Author: liming
  * @Date: 2021-08-12 18:23:37
- * @LastEditTime: 2021-08-13 05:48:31
+ * @LastEditTime: 2021-08-22 16:34:53
  * @FilePath: \03-黑马刘龙彬Node+Express+MySQL全家桶(好)\03-NodeAPI接口\02-代码手敲\code\api_server\router\user.js
  */
 
@@ -13,6 +13,7 @@ const router = express.Router();
 // const user_handler = require('../router_handler/user');
 const { regUser,login} = require("../router_handler/user");
 // 这种写法更好，嘿嘿，这个是我看React视频后自己照猫画虎写的，试了一下发现是有用的！
+// 因为router_handler/user里面exports了regUser,login这2个变量
 
 // 1.导入验证数据的【局部】中间件(只在post请求中使用)
 const expressJoi = require("@escook/express-joi");
@@ -42,6 +43,7 @@ const { reg_login_schema} =  require('../schema/user')
 router.post("/reguser", expressJoi(reg_login_schema),regUser);
 
 // 登陆 
-router.post("/login", login);
+router.post("/login", expressJoi(reg_login_schema), login);
+// 注册和登陆用的是同一个校验规则
  
 module.exports = router

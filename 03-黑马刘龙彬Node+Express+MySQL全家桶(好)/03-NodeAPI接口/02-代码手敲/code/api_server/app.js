@@ -1,7 +1,7 @@
 /*
  * @Author: liming
  * @Date: 2021-08-12 17:21:23
- * @LastEditTime: 2021-08-13 06:06:18
+ * @LastEditTime: 2021-08-23 11:53:58
  * @FilePath: \03-黑马刘龙彬Node+Express+MySQL全家桶(好)\03-NodeAPI接口\02-代码手敲\code\api_server\app.js
  */
 
@@ -32,6 +32,7 @@ app.use((req, res, next) => {
     // 如果不传递status，则它的默认值为1,表示失败的情况
     // err的值可能是一个错误对象，也可能是一个错误的描述字符串
     res.cc = (err, status = 1) => {
+        // status=1是ES6写法，表示status不写具体值时它的默认值为1
         res.send({
             status,
             message:err instanceof Error ? err.message:err
@@ -39,6 +40,18 @@ app.use((req, res, next) => {
     }
     next()
 })
+
+// 注意：一定要在【路由之前】配置解析Token的中间件
+const expressJWT = require('express-jwt')
+// 导入配置文件
+const config = require('./config')
+// 使用 .unless({ path: [/^\/api\//] }) 指定哪些接口不需要进行 Token 的身份认证
+// 不包含api的路径都需要进行身份认证
+// 如果发现你请求的路径的请求头中没有包含token，则身份认证失败
+app.use(
+  expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] })
+);
+
 
 // 导入并使用用户(user.js)路由模块
 // user.js的后缀名可以省略
@@ -48,12 +61,19 @@ app.use("/api", userRouter);
 // 比如你在POstMan上登陆http://127.0.0.1:3007/reguser是访问不到的，必须是http://127.0.0.1:3007/api/reguser
 // 注意：浏览器只支持GET请求，POST请求请用PostMan来测试
 
+// 导入并使用用户信息(userinfo.js)路由模块
+const userInfoRouter = require('./router/userinfo')
+// 通过app.use来进行注册，挂载一个访问前缀my
+app.use("/my", userInfoRouter);
+
 //定义错误级别的中间件
 app.use((err, req, res, next) => {
   // 数据验证失败
-  if (err instanceof joi.ValidationError) return res.cc(err);
-  //未知的错误
-  res.cc(err);
+    if (err instanceof joi.ValidationError) return res.cc(err);
+    // 身份认证失败
+    if (err.name === "UnauthorizedError") return res.cc('身份认证失败!')
+      //未知的错误
+      res.cc(err);
 })
 
 //启动服务器
