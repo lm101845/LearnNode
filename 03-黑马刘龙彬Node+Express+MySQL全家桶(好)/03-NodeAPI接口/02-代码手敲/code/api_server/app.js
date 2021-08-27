@@ -1,8 +1,8 @@
 /*
  * @Author: liming
  * @Date: 2021-08-12 17:21:23
- * @LastEditTime: 2021-08-23 11:53:58
- * @FilePath: \03-黑马刘龙彬Node+Express+MySQL全家桶(好)\03-NodeAPI接口\02-代码手敲\code\api_server\app.js
+ * @LastEditTime: 2021-08-27 15:30:15
+ * @FilePath: \03-NodeAPI接口\02-代码手敲\code\api_server\app.js
  */
 
 //导入express
@@ -13,7 +13,7 @@ const app = express();
 
 // 导入 joi来定义验证规则
 const joi = require("joi");
-
+// ==============================================================================
 
 //导入并配置cors中间件
 const cors = require('cors')
@@ -52,6 +52,7 @@ app.use(
   expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] })
 );
 
+// ==============================================================================
 
 // 导入并使用用户(user.js)路由模块
 // user.js的后缀名可以省略
@@ -63,8 +64,15 @@ app.use("/api", userRouter);
 
 // 导入并使用用户信息(userinfo.js)路由模块
 const userInfoRouter = require('./router/userinfo')
-// 通过app.use来进行注册，挂载一个访问前缀my
+// 通过app.use来进行注册这个模块，注册之前，挂载一个统一的访问前缀my
 app.use("/my", userInfoRouter);
+
+// 导入并使用文章分类(artcate.js)路由模块
+const artCateRouter = require('./router/artcate')
+// 通过app.use来进行注册这个模块，注册之前，挂载一个统一的访问前缀my/article
+app.use("/my/article", artCateRouter);
+
+// ==============================================================================
 
 //定义错误级别的中间件
 app.use((err, req, res, next) => {
@@ -75,6 +83,8 @@ app.use((err, req, res, next) => {
       //未知的错误
       res.cc(err);
 })
+
+// ==============================================================================
 
 //启动服务器
 app.listen(3007, () => {

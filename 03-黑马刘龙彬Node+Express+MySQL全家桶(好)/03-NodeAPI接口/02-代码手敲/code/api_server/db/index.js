@@ -1,8 +1,8 @@
 /*
  * @Author: liming
  * @Date: 2021-08-13 00:47:03
- * @LastEditTime: 2021-08-13 01:28:38
- * @FilePath: \03-黑马刘龙彬Node+Express+MySQL全家桶(好)\03-NodeAPI接口\02-代码手敲\code\api_server\db\index.js
+ * @LastEditTime: 2021-08-27 15:38:23
+ * @FilePath: \03-NodeAPI接口\02-代码手敲\code\api_server\db\index.js
  */
 
 // 这个模块中我们创建并导出数据库的连接对象

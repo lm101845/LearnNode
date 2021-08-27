@@ -42,4 +42,19 @@
 ## 解析Token相关
 
 * [express-jwt](https://www.npmjs.com/package/express-jwt)
+
+# JS书写风格指南
+
+* [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
+
+# JS语法转换——常用
+
+* [@babel/core](https://www.npmjs.com/package/@babel/core)
+  * [官网](https://babel.dev/)
+* [core-js](https://www.npmjs.com/package/core-js)
+  * [NPM core-js 的作者为什么还没找到工作？](https://www.zhihu.com/question/338950875)
+
+# CSS语法转换
+
+* [postcss](https://www.npmjs.com/package/postcss)
 * 
