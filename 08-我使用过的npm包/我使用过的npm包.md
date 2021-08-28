@@ -57,4 +57,17 @@
 # CSS语法转换
 
 * [postcss](https://www.npmjs.com/package/postcss)
+
+# history路由
+
+* [connect-history-api-fallback](https://www.npmjs.com/package/connect-history-api-fallback)
+* Fallback to index.html for applications that are using the HTML 5 history API
+* 这是一个中间件，用于解决history模式下刷新页面404找不到的问题。
+* history模式虽然没有＃看上去好看，但是它有一个问题，刷新后页面不见了，而哈希模式＃后面的部分服务器不管，所以没有这个问题。
+* 解决404的问题得靠后端工程师，应用部署上线时需要后端人员支持。
+* 还有一个野路子可以用Nginx解决，此处不表。
+
+# 编码格式转换(对象<==>urlencoded编码格式)
+
+* [query-string](https://www.npmjs.com/package/query-string)
 * 
