@@ -1,8 +1,8 @@
 /*
  * @Author: liming
  * @Date: 2021-08-12 17:21:23
- * @LastEditTime: 2021-08-27 15:30:15
- * @FilePath: \03-NodeAPI接口\02-代码手敲\code\api_server\app.js
+ * @LastEditTime: 2021-08-29 10:14:35
+ * @FilePath: \03-黑马刘龙彬Node+Express+MySQL全家桶(好)\03-NodeAPI接口\02-代码手敲\code\api_server\app.js
  */
 
 //导入express
@@ -13,7 +13,7 @@ const app = express();
 
 // 导入 joi来定义验证规则
 const joi = require("joi");
-// ==============================================================================
+// ====================================中间件区域==========================================
 
 //导入并配置cors中间件
 const cors = require('cors')
@@ -25,6 +25,10 @@ app.use(cors())
 // 它是body-parser(2019年消亡)这个中间件的替代品，都是用来处理POST请求的(Node本身不能处理POST)
 // 注意：这个中间件只能解析POST请求的【application/x-www-form-urlencoded】格式的数据
 app.use(express.urlencoded({ extended: false }))
+
+//托管静态资源文件
+app.use('/uploads', express.static('./uploads'))
+// 挂载一个统一的访问前缀：/uploads
 
 
 // 定义一个全局中间件，封装一个res.cc函数(注意：一定要写到【路由之前】！！！！！)
@@ -41,6 +45,16 @@ app.use((req, res, next) => {
     next()
 })
 
+//定义错误级别的中间件
+app.use((err, req, res, next) => {
+  // 数据验证失败
+    if (err instanceof joi.ValidationError) return res.cc(err);
+    // 身份认证失败
+    if (err.name === "UnauthorizedError") return res.cc('身份认证失败!')
+      //未知的错误
+      res.cc(err);
+})
+
 // 注意：一定要在【路由之前】配置解析Token的中间件
 const expressJWT = require('express-jwt')
 // 导入配置文件
@@ -49,10 +63,11 @@ const config = require('./config')
 // 不包含api的路径都需要进行身份认证
 // 如果发现你请求的路径的请求头中没有包含token，则身份认证失败
 app.use(
-  expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] })
+    expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] })
+    // 除了api接口以外的其他所有接口都是有权限的接口，都需要身份验证
 );
 
-// ==============================================================================
+// =====================================路由区域=========================================
 
 // 导入并使用用户(user.js)路由模块
 // user.js的后缀名可以省略
@@ -72,19 +87,12 @@ const artCateRouter = require('./router/artcate')
 // 通过app.use来进行注册这个模块，注册之前，挂载一个统一的访问前缀my/article
 app.use("/my/article", artCateRouter);
 
+// 导入并使用文章的路由模块
+const articleRouter = require('./router/article')
+app.use("/my/article", articleRouter);
 // ==============================================================================
 
-//定义错误级别的中间件
-app.use((err, req, res, next) => {
-  // 数据验证失败
-    if (err instanceof joi.ValidationError) return res.cc(err);
-    // 身份认证失败
-    if (err.name === "UnauthorizedError") return res.cc('身份认证失败!')
-      //未知的错误
-      res.cc(err);
-})
 
-// ==============================================================================
 
 //启动服务器
 app.listen(3007, () => {

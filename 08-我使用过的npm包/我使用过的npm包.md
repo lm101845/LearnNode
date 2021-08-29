@@ -43,6 +43,18 @@
 
 * [express-jwt](https://www.npmjs.com/package/express-jwt)
 
+## 文件上传有关
+
+* [multer](https://www.npmjs.com/package/multer)
+
+* [Express文件表单解析中间件 Multer简介](https://segmentfault.com/a/1190000017521702)
+
+## 静态资源有关
+
+* express自带的`express.static`
+
+* [serve-static](https://www.npmjs.com/package/serve-static)
+
 # JS书写风格指南
 
 * [eslint-config-airbnb-base](https://www.npmjs.com/package/eslint-config-airbnb-base)
