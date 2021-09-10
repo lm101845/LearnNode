@@ -1,0 +1,30 @@
+<!--
+ * @Author: liming
+ * @Date: 2021-09-10 11:55:02
+ * @LastEditTime: 2021-09-10 12:35:03
+ * @FilePath: \03-黑马刘龙彬Node+Express+MySQL全家桶(好)\03-身份认证\02-代码手敲\01-SessionDemo\pages\login.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登陆页面</title>
+    <script src='./jquery.js'></script>
+</head>
+<body>
+    <!-- 表单页面 -->
+    <form action="api/login" method="post">
+        <!-- autocomplete 属性规定输入字段是否应该启用自动完成功能。 -->
+        <div>账号：<input type="text" name='username' autocomplete="off"></div><br>
+        <div>密码：<input type="password" name='password' autocomplete="off"></div><br>
+        <div>
+            <button>登陆</button>
+        </div>
+    </form>
+    <script>
+       
+    </script>
+</body>
+</html>

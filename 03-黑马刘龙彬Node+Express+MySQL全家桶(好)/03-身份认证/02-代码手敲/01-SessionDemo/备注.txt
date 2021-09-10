@@ -1,0 +1,5 @@
+有一个尴尬的事情，就是pages文件夹里面的代码我没有，我从视频上抄了一些，但是不全，我也不会自己写。。。。。。
+
+但是总不能不管吧，我只能在网上找一些相似代码了。
+
+[Express + Session 实现登录验证](https://www.cnblogs.com/mingjiatang/p/7495321.html)

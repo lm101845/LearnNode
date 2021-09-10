@@ -1,0 +1,30 @@
+<!--
+ * @Author: liming
+ * @Date: 2021-09-10 11:54:46
+ * @LastEditTime: 2021-09-10 12:40:25
+ * @FilePath: \03-黑马刘龙彬Node+Express+MySQL全家桶(好)\03-身份认证\02-代码手敲\01-SessionDemo\pages\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>后台主页</title>
+    <!-- 后台主页，只有你成功之后，我们才允许你访问 -->
+    <!-- 如果你没有登陆，我们会强制你跳转到login登陆页面中 -->
+    <script src='./jquery.js'></script>
+</head>
+<body>
+    <h1>首页</h1>
+    <button id="btnLoginout">退出登陆</button>
+    <script>
+        $(function(){
+            // 这里就没有看到了
+            // alert('您尚未登陆，请登陆后再执行此操作！')
+            // 我们一点击确定，就会自动跳转到登陆页面
+            location.href = '/login.html'
+        })
+    </script>
+</body>
+</html>
