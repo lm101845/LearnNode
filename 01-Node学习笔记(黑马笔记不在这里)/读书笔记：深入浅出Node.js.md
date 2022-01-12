@@ -11,6 +11,8 @@ categories: 前端理论
 
 (注3：我觉得现在有必要再把操作系统拿过来学一下了，就看这个刚考完研的学生讲的的[操作系统视频](https://www.bilibili.com/video/BV1LW411q7Kk?from=search&seid=16303634005756326075)吧，之前看过，没看完，讲的还挺通俗的。)
 
+(注4：现在是2022年1月11日，我准备把这本书有空的时候看看，现在慢慢的可以看得懂一些了，这就是时间的魔力。)
+
 # 前言
 
 [Ryan Dahl](https://en.wikipedia.org/wiki/Ryan_Dahl)
