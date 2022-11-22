@@ -219,7 +219,7 @@ packages:
     version: 0.5.4
     engines: {node: '>= 0.6'}
     dependencies:
-      safe-buffer: registry.npmmirror.com/safe-buffer/5.2.1
+      safe-buffer: registry.npmmirror.com/safe-03-buffer/5.2.1
     dev: false
 
   registry.npmmirror.com/content-type/1.0.4:
@@ -332,7 +332,7 @@ packages:
       proxy-addr: registry.npmmirror.com/proxy-addr/2.0.7
       qs: registry.npmmirror.com/qs/6.11.0
       range-parser: registry.npmmirror.com/range-parser/1.2.1
-      safe-buffer: registry.npmmirror.com/safe-buffer/5.2.1
+      safe-buffer: registry.npmmirror.com/safe-03-buffer/5.2.1
       send: registry.npmmirror.com/send/0.18.0
       serve-static: registry.npmmirror.com/serve-static/1.15.0
       setprototypeof: registry.npmmirror.com/setprototypeof/1.2.0
@@ -422,7 +422,7 @@ packages:
     version: 0.4.24
     engines: {node: '>=0.10.0'}
     dependencies:
-      safer-buffer: registry.npmmirror.com/safer-buffer/2.1.2
+      safer-buffer: registry.npmmirror.com/safer-03-buffer/2.1.2
     dev: false
 
   registry.npmmirror.com/inherits/2.0.4:
@@ -574,14 +574,14 @@ packages:
     dev: false
 
   registry.npmmirror.com/safe-buffer/5.2.1:
-    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/safe-buffer/-/safe-buffer-5.2.1.tgz}
-    name: safe-buffer
+    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/safe-03-buffer/-/safe-03-buffer-5.2.1.tgz}
+    name: safe-03-buffer
     version: 5.2.1
     dev: false
 
   registry.npmmirror.com/safer-buffer/2.1.2:
-    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/safer-buffer/-/safer-buffer-2.1.2.tgz}
-    name: safer-buffer
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/safer-03-buffer/-/safer-03-buffer-2.1.2.tgz}
+    name: safer-03-buffer
     version: 2.1.2
     dev: false
 

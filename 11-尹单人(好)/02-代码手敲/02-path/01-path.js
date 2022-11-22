@@ -13,16 +13,16 @@ const path = require('path');
  * 4.处理目录路径的时候如果说，结尾处有路径分割符，则也会被忽略掉
  */
 console.log(__filename,'--完整的')   //当前脚本文件执行的完整路径
-//E:\01-code\06-LearnNode★\LearnNode\11-尹单人(好)\02-代码手敲\06-path.js
+//E:\01-code\06-LearnNode★\LearnNode\11-尹单人(好)\02-代码手敲\01-path.js
 
 console.log(path.basename(__filename),'--通过basename处理过的结果')  //path.basename() 方法返回一个 path 的最后一部分
-// 06-path.js
+// 01-path.js
 
 console.log(path.basename(__filename,'.js'),'--如果后缀对的，就不返回后缀了')
 //06-path
 
 console.log(path.basename(__filename,'.css'),'--如果后缀不对，就把后缀整体返回了')
-//06-path.js
+//01-path.js
 
 
 console.log(path.basename('/a/b/c'))  //返回的就是path路径的【最后一个部分】，不管这个部分是文件还是一个目录

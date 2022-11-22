@@ -124,7 +124,7 @@ console.log(path.resolve())
 console.log(__filename)
 //E:\01-code\06-LearnNode★\LearnNode\11-尹单人(好)\02-代码手敲
 console.log(__dirname)
-// E:\01-code\06-LearnNode★\LearnNode\11-尹单人(好)\02-代码手敲\06-path1.js
+// E:\01-code\06-LearnNode★\LearnNode\11-尹单人(好)\02-代码手敲\02-path.js
 
 console.log("++++++++++++++++++++++++++")
 
