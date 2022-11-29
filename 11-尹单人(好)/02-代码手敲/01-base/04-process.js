@@ -34,10 +34,10 @@ console.log(process.env.USERPROFILE);  //Mac平台是HOME
 
 console.log(process.platform)
 //win32
-
+console.log("==========分割线================")
 //3.运行状态：启动参数、PID、运行时间
 
-console.log(process.argv)
+console.log(process.argv,'process.argv********************')
 //输入 node .\04-process.js 1 2会显示如下
 /**
  * [
